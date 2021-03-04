@@ -1,0 +1,81 @@
+// *** Mobile *** //
+.toggle__container {
+    background: #212529;
+    align-items: center;
+    border-radius: 0 0 30px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 72px;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    // margin-top: 20px;
+    // margin-bottom: 80px;
+    width: 280px;
+    .toggle__slider {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        p {
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 28px;
+        }
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 56px;
+            height: 32px;
+        }
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        // /* The slider */
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: $Toggle-DM;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 4px; //4px;//28px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+        input:checked+.slider:before {
+            -webkit-transform: translateX(24px);
+            -ms-transform: translateX(24px);
+            transform: translateX(24px);
+        }
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+        .slider.round:before {
+            border-radius: 50%;
+        }
+    }
+}
+
+// *** Desktop *** // 
+@include tablet {
+    .toggle__container {
+        margin-bottom: 64px;
+    }
+}

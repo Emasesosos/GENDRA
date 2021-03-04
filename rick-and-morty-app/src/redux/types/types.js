@@ -1,5 +1,7 @@
 export const types = {
 
+    TOGGLE_CHANGE: 'toggle_change',
+
     MAKE_REQUEST_GENERAL: 'make-request-general',
     MAKE_REQUEST_PARAMS: 'make-request-params',
     GET_DATA: 'get-data',

@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { pageIni } from '../redux/actions/pages';
 
 import { getData, makeRequestGeneral } from '../redux/actions/characters';
+import { Toggle } from './Toggle/Toggle';
 
 export const Home = () => {
 
@@ -31,6 +32,7 @@ export const Home = () => {
     return (
         <div className="home__container">
             <Navbar />
+            <Toggle />
             <Paginacion />
         </div>
     );
