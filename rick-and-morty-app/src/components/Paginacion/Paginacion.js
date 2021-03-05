@@ -1,18 +1,18 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { pageIni, pageNext, pagePrev } from '../../redux/actions/pages';
+import { pageIni, pageIniParams, pageNext, pagePrev } from '../../redux/actions/pages';
 
 export const Paginacion = () => {
 
     const dispatch = useDispatch();
 
-    const personajes = useSelector(state => state.characters);
+    const data = useSelector(state => state.data);
     const paginas = useSelector(state => state.pageNow);
 
-    const { characters } = personajes;
+    const { characters, episodes } = data;
     const { pagePag, totalPages } = paginas;
 
-    if(!characters) return null;
+    if(!characters || !episodes) return null;
 
     const pageNumbers = [];
 
@@ -25,7 +25,9 @@ export const Paginacion = () => {
     };
 
     const handlePageIni = (amount, totalPages) => {
+        dispatch(pageIniParams(amount, totalPages));
         dispatch(pageIni(amount, totalPages));
+        // dispatch(pageIniParams(amount, totalPages));
     };
 
     const handlePageNext = (amount) => {

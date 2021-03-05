@@ -1,0 +1,30 @@
+.cards__container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 25px;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+@include telefono{
+    .cards__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@include tablet{
+    .cards__container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@include desktop{
+    .cards__container {
+        grid-template-columns: repeat(4, 1fr); 
+    }
+}
+
+@include desktop2{
+    .cards__container {
+        grid-template-columns: repeat(5, 1fr); 
+    }
+}

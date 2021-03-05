@@ -1,26 +1,11 @@
 .home__container {
     align-items: center;
-    background: #e2e2e2;
+    // background: chocolate;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     justify-content: flex-start;
     margin: 0 auto;
     max-width: 100%;
 }
 
-// .home__main {
-//     align-items: center;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: center;
-//     width: 100%;
-// }
-// @include tablet {
-//     .home__container {
-//         margin: 0 auto;
-//     }
-//     .home__main {
-//         flex-direction: row;
-//     }
-// }

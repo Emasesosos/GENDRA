@@ -1,6 +1,6 @@
 // *** Mobile *** //
 .toggle__container {
-    background: #212529;
+    background: rgb(248, 248, 248);
     align-items: center;
     border-radius: 0 0 30px 30px;
     display: flex;
@@ -10,14 +10,14 @@
     padding-left: 15px;
     padding-right: 15px;
     // margin-top: 20px;
-    // margin-bottom: 80px;
+    margin-bottom: 24px;
     width: 280px;
     .toggle__slider {
         display: flex;
         justify-content: space-between;
         width: 100%;
         p {
-            color: white;
+            color: #212529;
             font-size: 15px;
             font-weight: bold;
             line-height: 28px;
@@ -73,9 +73,9 @@
     }
 }
 
-// *** Desktop *** // 
-@include tablet {
-    .toggle__container {
-        margin-bottom: 64px;
-    }
-}
+// // *** Desktop *** // 
+// @include tablet {
+//     .toggle__container {
+//         margin-bottom: 24px;
+//     }
+// }

@@ -2,6 +2,7 @@ import { types } from './../types/types';
 
 const initialState = {
     pagePag: 1,
+    pagePagParams: 1,
     totalPages: 0
 };
 
@@ -25,6 +26,14 @@ export function pageReducer(state = initialState, action) {
                 return {
                     ...state,
                     pagePag: action.payload.pagePag,
+                    totalPages: action.payload.totalPages
+                }
+            }
+        case types.PAGE_INI_PARAMS:
+            {
+                return {
+                    ...state,
+                    pagePagParams: action.payload.pagePagParams,
                     totalPages: action.payload.totalPages
                 }
             }

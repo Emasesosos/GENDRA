@@ -16,15 +16,41 @@ export const makeRequestParams = () => {
 
 };
 
-export const getData = (res) => {
+export const getData = (searchType, res) => {
+
+    if(searchType === 'C') {
+
+        return {
+            type: types.GET_DATA,
+            payload: {
+                characters: res,
+                episodes: []
+            }
+        };
+
+    } else {
+
+        return {
+            type: types.GET_DATA,
+            payload: {
+                characters: [],
+                episodes: res
+            }
+        };
+
+    }
+
+};
+
+export const getDataParams = (res) => {
 
     return {
-        type: types.GET_DATA,
+        type: types.GET_DATA_PARAMS,
         payload: {
             characters: res,
-            // info: res
+            episodes: []
         }
-    };
+    };    
 
 };
 
@@ -38,3 +64,4 @@ export const errorGetData = (e) => {
     };
 
 };
+

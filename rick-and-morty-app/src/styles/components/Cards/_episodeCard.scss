@@ -1,0 +1,15 @@
+.episodeCard__number-episode {
+    position: relative;
+    img {
+        opacity: 0.6;
+    }
+    p {
+        color: black;
+        font-size: 122px;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+    }
+}

@@ -33,3 +33,15 @@ export const pageIni = (amount, totalPages) => {
     };
 
 };
+
+export const pageIniParams = (amount, totalPages) => {
+
+    return {
+        type: types.PAGE_INI_PARAMS,
+        payload: {
+            pagePagParams: amount,
+            totalPages: totalPages
+        }
+    };
+
+};

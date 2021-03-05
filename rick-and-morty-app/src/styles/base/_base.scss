@@ -16,6 +16,11 @@ body {
 }
 
 body {
-    background: #e2e2e2;
+    background: rgb(216, 211, 211);
     font-family: 'Montserrat', sans-serif;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
