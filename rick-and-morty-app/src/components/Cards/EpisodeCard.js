@@ -8,7 +8,7 @@ export const EpisodeCard = ( {episode} ) => {
     const { air_date, episode: cap, id, name } = episode;
 
     return (
-        <div className="card" style={{width: '18rem'}}>
+        <div className="card animate__animated animate__fadeIn" style={{width: '18rem'}}>
             <div className="episodeCard__number-episode">
                 <p>{ id }</p>
                 <img className="card-img-top" src={ RickAndMorty } alt={ RickAndMorty }/>

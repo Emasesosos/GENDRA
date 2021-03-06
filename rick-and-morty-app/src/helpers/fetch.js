@@ -1,3 +1,5 @@
+import Swal from 'sweetalert2';
+
 export const getCharacters = async(page) => {
 
     const corsHeroku = 'https://obscure-mesa-98003.herokuapp.com';
@@ -51,7 +53,8 @@ export const getSearchParams = async (pages, params) => {
     try {
 
         const resp = await fetch(url);
-        if (!resp.ok) throw new Error('No se pudo realizar la petición Params');
+        console.log({resp});
+        if (!resp.ok) throw new Error(resp.statusText);
         const data = await resp.json();
 
         return data;
@@ -59,6 +62,12 @@ export const getSearchParams = async (pages, params) => {
     } catch(error) {
 
         console.log(error);
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error,
+          })
 
     }
 

@@ -1,16 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-export const CharacterCard = ({ character }) => {
-
-    // console.log(character);
+export const CharacterCard = ({ character, id }) => {
 
     const { gender, location, name, origin, image, species, status } = character;
 
     return (
-        <div className="card" style={{width: '18rem'}}>
+        <div className="card animate__animated animate__fadeIn" style={{width: '18rem'}}>
             <img className="card-img-top" src={image} alt={image}/>
             <div className="card-body">
-                <h5 className="card-title">{name}</h5>
+                <Link to={`item/${id}`}><h5 className="card-title">{name}</h5></Link>
             </div>
             <ul className="list-group list-group-flush">
                 <li className="list-group-item"> <p>Species: <span>{ species }</span></p></li>

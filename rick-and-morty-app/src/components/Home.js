@@ -2,7 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCharacters, getEpisodes } from './../helpers/fetch';
 import { pageIni } from '../redux/actions/pages';
-import { getData, makeRequestGeneral } from '../redux/actions/characters';
+import { getData, makeRequestGeneral } from '../redux/actions/data';
 import { Navbar } from './Navbar';
 import { Toggle } from './Toggle/Toggle';
 import { Paginacion } from './Paginacion/Paginacion';
@@ -24,6 +24,10 @@ export const Home = () => {
         },
         [dispatch]
     );
+
+    window.onbeforeunload = function(e) {
+        console.log("hola");
+    };
 
     useEffect(() => {
 

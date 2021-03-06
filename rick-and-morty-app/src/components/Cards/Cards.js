@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Spinner } from '../Spinner/Spinner';
 import { CharacterCard } from './CharacterCard';
 import { EpisodeCard } from './EpisodeCard';
 
@@ -10,20 +11,23 @@ export const Cards = () => {
 
     return (
         <div className="cards__container">
+            { /* ( characters === undefined || episodes === undefined) && 'Error de petición' */ }
             {
                 characters.length > 0 
                     ?   characters.map((character, i) => {
                             return <CharacterCard 
                                         key= {i}
                                         character={ character }
+                                        id={ character.id }
                                     />
                         }) : episodes.length > 0 
                             ? episodes.map((episode, i) => {
                                 return <EpisodeCard 
                                             key={ i }
                                             episode={ episode }
+                                            id={ episode.id }
                                         />
-                                }) : 'No hay información'
+                                }) : <Spinner />
             }
         </div>
     );
