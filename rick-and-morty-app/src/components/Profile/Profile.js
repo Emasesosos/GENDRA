@@ -7,7 +7,6 @@ export const Profile = (props) => {
 
     const dispatch = useDispatch();
     const { itemId } = (props.match.params);
-    console.log(itemId);
     const { characters } = useSelector(state => state.data);
 
     let findCharacter;
@@ -21,7 +20,6 @@ export const Profile = (props) => {
     }
     
     const { name, image } = findCharacter;
-
 
     return (
             

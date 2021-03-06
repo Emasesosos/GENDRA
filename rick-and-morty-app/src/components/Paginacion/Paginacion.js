@@ -25,9 +25,8 @@ export const Paginacion = () => {
     };
 
     const handlePageIni = (amount, totalPages) => {
-        dispatch(pageIniParams(amount, totalPages));
         dispatch(pageIni(amount, totalPages));
-        // dispatch(pageIniParams(amount, totalPages));
+        dispatch(pageIniParams(amount, totalPages));
     };
 
     const handlePageNext = (amount) => {

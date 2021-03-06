@@ -27,17 +27,17 @@ export const Navbar = () => {
     const { characterEpisode } = formValues;
 
     const handleSearch = async (e) => {
+
         e.preventDefault();
-        if(!characterEpisode) {
-            return;
-        }
-        console.log({characterEpisode});
+        if(!characterEpisode) return null;
         dispatch(makeRequestParams());
         const character = await getSearchParams(pagePagParams, characterEpisode);
         if(!character) return null;
         const { info, results } = character;
         typeData(results, pagePagParams, info.pages);
+        
         reset();
+
     };
 
     return (

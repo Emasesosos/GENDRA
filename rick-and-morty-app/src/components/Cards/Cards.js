@@ -11,7 +11,6 @@ export const Cards = () => {
 
     return (
         <div className="cards__container">
-            { /* ( characters === undefined || episodes === undefined) && 'Error de petición' */ }
             {
                 characters.length > 0 
                     ?   characters.map((character, i) => {

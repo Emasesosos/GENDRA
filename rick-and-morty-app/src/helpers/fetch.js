@@ -9,7 +9,7 @@ export const getCharacters = async(page) => {
     try {
 
         const resp = await fetch(url);
-        if (!resp.ok) throw new Error('No se pudo realizar la petición Characters');
+        if (!resp.ok) throw new Error(resp.statusText);
         const data = await resp.json();
 
         return data;
@@ -17,6 +17,12 @@ export const getCharacters = async(page) => {
     } catch (error) {
 
         console.log(error);
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error,
+        });
 
     }
 
@@ -31,7 +37,7 @@ export const getEpisodes = async(page) => {
     try {
 
         const resp = await fetch(url);
-        if (!resp.ok) throw new Error('No se pudo realizar la petición Episodes');
+        if (!resp.ok) throw new Error(resp.statusText);
         const data = await resp.json();
 
         return data;
@@ -40,26 +46,31 @@ export const getEpisodes = async(page) => {
 
         console.log(error);
 
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: error,
+        });
+
     }
 
 };
 
-export const getSearchParams = async (pages, params) => {
+export const getSearchParams = async(pages, params) => {
 
     const corsHeroku = 'https://obscure-mesa-98003.herokuapp.com';
     const urlApi = `https://rickandmortyapi.com/api/character?page=${pages}&name=${params}`;
     const url = `${corsHeroku}/${urlApi}`;
-   
+
     try {
 
         const resp = await fetch(url);
-        console.log({resp});
         if (!resp.ok) throw new Error(resp.statusText);
         const data = await resp.json();
 
         return data;
 
-    } catch(error) {
+    } catch (error) {
 
         console.log(error);
 
@@ -67,8 +78,8 @@ export const getSearchParams = async (pages, params) => {
             icon: 'error',
             title: 'Oops...',
             text: error,
-          })
+        });
 
     }
 
-}; 
+};

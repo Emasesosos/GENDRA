@@ -24,17 +24,13 @@ export const Home = () => {
         },
         [dispatch]
     );
-
-    window.onbeforeunload = function(e) {
-        console.log("hola");
-    };
-
+    
     useEffect(() => {
 
         dispatch(makeRequestGeneral());
-   
+        
         const fetchData = async() => {
-     
+
             if(searchType === 'C') {
                 const characters = await getCharacters(pagePag);
                 const { info, results } = characters;
